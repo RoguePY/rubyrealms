@@ -145,4 +145,4 @@ async def purge(ctx, amount=100):
     await client.delete_messages(messages)
     await client.say("Messages deleted.")
 
-client.run(BOT_TOKEN)
+client.run(TOKEN)
