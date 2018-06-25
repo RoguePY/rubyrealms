@@ -17,8 +17,6 @@ from discord.ext import commands
 import discord
 import datetime
 
-TOKEN = "NDU1OTY2NTY0MzMyODYzNDg5.DgT-mA.NfsKBwfuyEM8tshL4psRzGMvWqg" #If Different bot, change commands.
-
 client = commands.Bot(command_prefix = ".")
 
 @client.event
@@ -144,4 +142,4 @@ async def purge(ctx, amount=100):
     await client.delete_messages(messages)
     await client.say("Messages deleted.")
 
-client.run(TOKEN)
+client.run(BOT_TOKEN)
