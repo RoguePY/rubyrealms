@@ -64,6 +64,14 @@ async def embed():
     await client.say(embed=embed)
 
 @client.command(pass_context=True)
+async def owner(ctx, *, msg):
+    if "434064731524038656" in [role.id for role in ctx.message.author.roles]:
+        await client.say("@everyone " + msg)
+    else:
+        embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
+        await client.say(embed=embed)
+
+@client.command(pass_context=True)
 async def membersonline(ctx):
     server = ctx.message.server
     output = 0
