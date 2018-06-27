@@ -91,8 +91,8 @@ async def mute(ctx, user: discord.Member):
         await client.add_roles(user, role)
         embed=discord.Embed(title="User Muted!", description="**{0}** was muted by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
         await client.say(embed=embed)
-    elif "@Rogue#7720" in user:
-        embed=discord.Embed(title="Failure", description="Do not attempt to mute Rogue. He too good at Minekwaft for that. Thanks!", color=0x322b6e)
+    elif user == "@Rogue#7720":
+        embed=discord.Embed(title="Failure", description="Do not attempt to unban Rogue. He too kewl. Thanks!", color=0x322b6e)
         await client.say(embed=embed)
     else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
@@ -105,8 +105,8 @@ async def unmute(ctx, user: discord.Member):
         await client.remove_roles(user, role)
         embed=discord.Embed(title="User Unmuted!", description="**{0}** was unmuted by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
         await client.say(embed=embed)
-    elif "@Rogue#7720" in user:
-        embed=discord.Embed(title="Failure", description="Do not attempt to unmute Rogue. He too good thooo. Thanks!", color=0x322b6e)
+    elif user == "@Rogue#7720":
+        embed=discord.Embed(title="Failure", description="Do not attempt to unban Rogue. He too kewl. Thanks!", color=0x322b6e)
         await client.say(embed=embed)
     else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
@@ -119,8 +119,8 @@ async def ban(ctx, user: discord.Member):
         await client.add_roles(user, role)
         embed=discord.Embed(title="User Muted!", description="**{0}** was Banned by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
         await client.say(embed=embed)    
-    elif "@Rogue#7720" in user:
-        embed=discord.Embed(title="Failure", description="Do not attempt to ban Rogue. Thanks!", color=0x322b6e)
+    elif user == "@Rogue#7720":
+        embed=discord.Embed(title="Failure", description="Do not attempt to unban Rogue. He too kewl. Thanks!", color=0x322b6e)
         await client.say(embed=embed)
     else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
@@ -133,7 +133,7 @@ async def unban(ctx, user: discord.Member):
         await client.remove_roles(user, role)
         embed=discord.Embed(title="User unbanned!", description="**{0}** was UnBanned by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
         await client.say(embed=embed)
-    elif "@Rogue#7720" in user:
+    elif user == "@Rogue#7720":
         embed=discord.Embed(title="Failure", description="Do not attempt to unban Rogue. He too kewl. Thanks!", color=0x322b6e)
         await client.say(embed=embed)
     else:
