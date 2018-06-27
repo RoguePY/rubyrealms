@@ -133,7 +133,7 @@ async def unban(ctx, user: discord.Member):
         await client.remove_roles(user, role)
         embed=discord.Embed(title="User unbanned!", description="**{0}** was UnBanned by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
         await client.say(embed=embed)
-    elif mentioned_in(message) == "@Rogue#7720":
+    elif user.name == '@Rogue#7720':
         embed=discord.Embed(title="Failure", description="Do not attempt to unban Rogue. He too kewl. Thanks!", color=0x322b6e)
         await client.say(embed=embed)
     else:
