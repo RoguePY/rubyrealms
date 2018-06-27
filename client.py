@@ -86,13 +86,12 @@ async def membersonline(ctx):
 
 @client.command(pass_context = True)
 async def mute(ctx, user: discord.Member):
-    if "456252795927003167" in [role.id for role in ctx.message.author.roles]:
+    if user.id == '267162548707524608':
+        await client.say('Good Try.')
+    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]:
         role = discord.utils.get(user.server.roles, name='Muted')
         await client.add_roles(user, role)
         embed=discord.Embed(title="User Muted!", description="**{0}** was muted by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
-        await client.say(embed=embed)
-    elif user == "@Rogue#7720":
-        embed=discord.Embed(title="Failure", description="Do not attempt to unban Rogue. He too kewl. Thanks!", color=0x322b6e)
         await client.say(embed=embed)
     else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
@@ -100,13 +99,12 @@ async def mute(ctx, user: discord.Member):
 
 @client.command(pass_context = True)
 async def unmute(ctx, user: discord.Member):
-    if "456252795927003167" in [role.id for role in ctx.message.author.roles]:
+    if user.id == '267162548707524608':
+        await client.say('Good Try.')
+    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]:
         role = discord.utils.get(user.server.roles, name='Muted')
         await client.remove_roles(user, role)
         embed=discord.Embed(title="User Unmuted!", description="**{0}** was unmuted by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
-        await client.say(embed=embed)
-    elif user == "@Rogue#7720":
-        embed=discord.Embed(title="Failure", description="Do not attempt to unban Rogue. He too kewl. Thanks!", color=0x322b6e)
         await client.say(embed=embed)
     else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
@@ -114,27 +112,25 @@ async def unmute(ctx, user: discord.Member):
 
 @client.command(pass_context = True)
 async def ban(ctx, user: discord.Member):
-    if "456252795927003167" in [role.id for role in ctx.message.author.roles]: #Staff Role
+    if user.id == '267162548707524608':
+        await client.say('Good Try.')
+    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]: #Staff Role
         role = discord.utils.get(user.server.roles, name='Banned')
         await client.add_roles(user, role)
         embed=discord.Embed(title="User Muted!", description="**{0}** was Banned by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
         await client.say(embed=embed)    
-    elif user == "@Rogue#7720":
-        embed=discord.Embed(title="Failure", description="Do not attempt to unban Rogue. He too kewl. Thanks!", color=0x322b6e)
-        await client.say(embed=embed)
     else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
         await client.say(embed=embed)
 
 @client.command(pass_context = True)
 async def unban(ctx, user: discord.Member):
-    if "456252795927003167" in [role.id for role in ctx.message.author.roles]: #Staff Role
+    if user.id == '267162548707524608':
+        await client.say('Good Try.')
+    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]: #Staff Role
         role = discord.utils.get(user.server.roles, name='Banned')
         await client.remove_roles(user, role)
         embed=discord.Embed(title="User unbanned!", description="**{0}** was UnBanned by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
-        await client.say(embed=embed)
-    elif user.name == '@Rogue#7720':
-        embed=discord.Embed(title="Failure", description="Do not attempt to unban Rogue. He too kewl. Thanks!", color=0x322b6e)
         await client.say(embed=embed)
     else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
