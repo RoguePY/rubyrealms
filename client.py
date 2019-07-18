@@ -130,8 +130,6 @@ async def members(ctx):
     totalmembers = ctx.message.server.members
     await client.say("There are " + str(totalmembers) + " members in the server.")
 
-zz='XS_MJA.31POu30Aa08jaJ0NkXgnr-YXmGE'
-
 @client.command(pass_context=True)
 async def echo(ctx, *, msg):
     channel = msg.channel
@@ -143,8 +141,6 @@ async def echo(ctx, *, msg):
 
     else:
         await channel.send(msg)
-
-aa='NTY4NjU0NTI3NTUzNzMyNjMw.'
         
 #@client.command(pass_context=True)
 #async def purge(ctx, amount=100):
@@ -155,4 +151,4 @@ aa='NTY4NjU0NTI3NTUzNzMyNjMw.'
 #    await client.delete_messages(messages)
 #    await client.say("Messages deleted.")
 
-client.run(aa+zz)
+client.run(['BOT_TOKEN'])
