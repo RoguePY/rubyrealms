@@ -23,7 +23,8 @@ client = commands.Bot(command_prefix = ".")
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name="Watching over you, young one."))
+    game = discord.Game("Watching over the Trust Discord.")
+    await client.change_presence(status=discord.Status.dnd, activity=game)
     print("We are live, Commander Rogue.")
 
 @client.event
