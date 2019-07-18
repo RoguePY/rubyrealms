@@ -128,10 +128,10 @@ zz='XS_MJA.31POu30Aa08jaJ0NkXgnr-YXmGE'
 @client.command(pass_context=True)
 async def echo(ctx, *, msg):
     if "@everyone" in msg:
-         await client.say("Please don't attempt to use @ everyone. Thanks!")
+         await client.send_message(ctx.message.channel, "Please don't attempt to use @ everyone. Thanks!")
     
     elif "@here" in msg:
-         await client.say("Please don't attempt to use @ here. Thanks!")
+         await client.send_messsage(ctx.message.channel, "Please don't attempt to use @ here. Thanks!")
 
     else:
         await client.say(msg)
