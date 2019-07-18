@@ -59,6 +59,8 @@ async def owner(ctx, *, msg):
 @client.command(pass_context=True)
 async def membersonline(ctx):
     channel = message.channel
+    async with channel.typing():
+    await asyncio.sleep(3)
     server = ctx.message.server
     output = 0
     for member in server.members:
