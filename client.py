@@ -61,17 +61,17 @@ async def owner(ctx, *, msg):
 async def membersonline(ctx):
     channel = ctx.message.channel
     async with channel.typing():
-    await asyncio.sleep(3)
-    server = ctx.message.server
-    output = 0
-    for member in server.members:
-        print(member.name)
-        status = str(member.status)
-        print(type(status))
-        print(status)
-        if str(member.status) == 'online' or str(member.status) == 'dnd':
-            output += 1
-    await channel.send(output)
+        await asyncio.sleep(3)
+        server = ctx.message.server
+        output = 0
+        for member in server.members:
+           print(member.name)
+           status = str(member.status)
+           print(type(status))
+           print(status)
+           if str(member.status) == 'online' or str(member.status) == 'dnd':
+               output += 1
+        await channel.send(output)
 
 #@client.command(pass_context = True)
 #async def mute(ctx, user: discord.Member):
