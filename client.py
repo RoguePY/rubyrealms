@@ -30,23 +30,26 @@ async def on_ready():
 @client.event
 async def on_message(message):
     await client.process_commands(message)
+    channel = message.channel
     channel_to_send = client.get_channel('457014078074781696') # Remember to change the Channel ID if the channel is deleted or this is for another server!
     if message.channel == channel_to_send:
         return
     else:
-        await client.send_message(channel_to_send, f"Message by {message.author} at {message.timestamp} in {message.channel}: ```{message.content}```")
+        await channel.send(channel_to_send, f"Message by {message.author} at {message.timestamp} in {message.channel}: ```{message.content}```")
 
 
-@client.event
-async def on_message_delete(message):
-    channel_to_send = client.get_channel('457014078074781696') # Remember to change the Channel ID if the channel is deleted or this is for another server!
-    if message.channel == channel_to_send:
-        return
-    else:
-        await client.send_message(channel_to_send, f"Message delete by {message.author} at {message.timestamp} in {message.channel}: ```{message.content}```")
+#@client.event
+#async def on_message_delete(message):
+#    channel = message.channel
+#    channel_to_send = client.get_channel('457014078074781696') # Remember to change the Channel ID if the channel is deleted or this is for another server!
+#    if message.channel == channel_to_send:
+#        return
+#    else:
+#    channel.send(channel_to_send, f"Message delete by {message.author} at {message.timestamp} in {message.channel}: ```{message.content}```")
 
 @client.command(pass_context=True)
 async def owner(ctx, *, msg):
+    channel = message.channel
     if "600504565816754182" in [role.id for role in ctx.message.author.roles]:
         await client.say("@everyone " + msg)
     else:
@@ -55,6 +58,7 @@ async def owner(ctx, *, msg):
 
 @client.command(pass_context=True)
 async def membersonline(ctx):
+    channel = message.channel
     server = ctx.message.server
     output = 0
     for member in server.members:
@@ -64,7 +68,7 @@ async def membersonline(ctx):
         print(status)
         if str(member.status) == 'online' or str(member.status) == 'dnd':
             output += 1
-    await client.say(output)
+    await channel.send(output)
 
 #@client.command(pass_context = True)
 #async def mute(ctx, user: discord.Member):
@@ -127,14 +131,15 @@ zz='XS_MJA.31POu30Aa08jaJ0NkXgnr-YXmGE'
 
 @client.command(pass_context=True)
 async def echo(ctx, *, msg):
+    channel = message.channel
     if "@everyone" in msg:
-         await client.send_message(ctx.message.channel, "Please don't attempt to use @ everyone. Thanks!")
+         await channel.send(ctx.message.channel, "Please don't attempt to use @ everyone. Thanks!")
     
     elif "@here" in msg:
-         await client.send_messsage(ctx.message.channel, "Please don't attempt to use @ here. Thanks!")
+         await channel.send(ctx.message.channel, "Please don't attempt to use @ here. Thanks!")
 
     else:
-        await client.say(msg)
+        await channel.send(msg)
 
 aa='NTY4NjU0NTI3NTUzNzMyNjMw.'
         
