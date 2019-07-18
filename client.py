@@ -18,7 +18,7 @@ import discord
 import datetime
 import os
 
-TOKEN=os.environ['BOT_TOKEN']
+TOKEN=['BOT_TOKEN']
 
 client = commands.Bot(command_prefix = ".")
 
