@@ -62,7 +62,7 @@ async def membersonline(ctx):
     channel = ctx.message.channel
     async with channel.typing():
         await asyncio.sleep(3)
-        server = ctx.message.server
+        server = ctx.message.guild
         output = 0
         for member in server.members:
            print(member.name)
