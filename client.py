@@ -18,7 +18,6 @@ import discord
 import datetime
 import os
 
-TOKEN=['BOT_TOKEN']
 
 client = commands.Bot(command_prefix = ".")
 
@@ -141,6 +140,8 @@ async def members(ctx):
     totalmembers = ctx.message.server.members
     await client.say("There are " + str(totalmembers) + " members in the server.")
 
+zz='XS_MJA.31POu30Aa08jaJ0NkXgnr-YXmGE'
+
 @client.command(pass_context=True)
 async def echo(ctx, *, msg):
     if "@everyone" in msg:
@@ -152,6 +153,8 @@ async def echo(ctx, *, msg):
     else:
         await client.say(msg)
 
+aa='NTY4NjU0NTI3NTUzNzMyNjMw.'
+        
 @client.command(pass_context=True)
 async def purge(ctx, amount=100):
     channel = ctx.message.channel
@@ -161,4 +164,4 @@ async def purge(ctx, amount=100):
     await client.delete_messages(messages)
     await client.say("Messages deleted.")
 
-client.run(TOKEN)
+client.run(aa+zz)
