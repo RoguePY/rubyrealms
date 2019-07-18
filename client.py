@@ -45,26 +45,8 @@ async def on_message_delete(message):
         await client.send_message(channel_to_send, f"Message delete by {message.author} at {message.timestamp} in {message.channel}: ```{message.content}```")
 
 @client.command(pass_context=True)
-async def embed():
-
-    embed = discord.Embed(title="Welcome to the Breakout Discord! Thanks for reading!", colour=discord.Colour(0xffffff), url="https://discord.gg/gHapnwB", description="Thanks for joining. We ***LOVE*** your support!", timestamp=datetime.datetime.utcfromtimestamp(1529630332))
-
-    embed.set_image(url="https://cdn.discordapp.com/attachments/416094045970890808/459165362727157761/xddd.png")
-    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/416094045970890808/459165224679768066/Rogue.png")
-    embed.set_author(name="Breakout - Meshcaid", url=" ", icon_url="https://cdn.discordapp.com/attachments/416094045970890808/459165590716809216/Meshcaid_logo_transparent_brown.png")
-    embed.set_footer(text="Breakout is a part of Meshcaid. Breakout has 100% cooperation with Meshcaid. All Rights Reserved.", icon_url="https://cdn.discordapp.com/embed/avatars/0.png")
-
-    embed.add_field(name="***Welcome!***", value="Breakout is a cops and robber's based game coming to the meshcaid platform very ***SOON!***")
-    embed.add_field(name="📣", value="Announcements are shown in [#Announcements.](https://discord.gg/UPqfUDe)")
-    embed.add_field(name="😂", value="Want to see my commands? Check #bot-commands-list for more!")
-    embed.add_field(name="😱", value="Breakout is a game on Meshcaid. Meshcaid Discord: https://discord.gg/WUDUYRW", inline=True)
-    embed.add_field(name="<:thonkang:219069250692841473>", value="If you have any questions, contact @Rogue#7720!", inline=True)
-
-    await client.say(embed=embed)
-
-@client.command(pass_context=True)
 async def owner(ctx, *, msg):
-    if "434064731524038656" in [role.id for role in ctx.message.author.roles]:
+    if "600504565816754182" in [role.id for role in ctx.message.author.roles]:
         await client.say("@everyone " + msg)
     else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
@@ -83,58 +65,58 @@ async def membersonline(ctx):
             output += 1
     await client.say(output)
 
-@client.command(pass_context = True)
-async def mute(ctx, user: discord.Member):
-    if user.id == '267162548707524608':
-        await client.say('Good Try.')
-    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]:
-        role = discord.utils.get(user.server.roles, name='Muted')
-        await client.add_roles(user, role)
-        embed=discord.Embed(title="User Muted!", description="**{0}** was muted by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
-        await client.say(embed=embed)
-    else:
-        embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
-        await client.say(embed=embed)
+#@client.command(pass_context = True)
+#async def mute(ctx, user: discord.Member):
+#    if user.id == '267162548707524608':
+#        await client.say('Good Try.')
+#    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]:
+#        role = discord.utils.get(user.server.roles, name='Muted')
+#        await client.add_roles(user, role)
+#        embed=discord.Embed(title="User Muted!", description="**{0}** was muted by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
+#        await client.say(embed=embed)
+#    else:
+#        embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
+#        await client.say(embed=embed)
 
-@client.command(pass_context = True)
-async def unmute(ctx, user: discord.Member):
-    if user.id == '267162548707524608':
-        await client.say('Good Try.')
-    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]:
-        role = discord.utils.get(user.server.roles, name='Muted')
-        await client.remove_roles(user, role)
-        embed=discord.Embed(title="User Unmuted!", description="**{0}** was unmuted by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
-        await client.say(embed=embed)
-    else:
-        embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
-        await client.say(embed=embed)
+#@client.command(pass_context = True)
+#async def unmute(ctx, user: discord.Member):
+#    if user.id == '267162548707524608':
+#        await client.say('Good Try.')
+#    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]:
+#        role = discord.utils.get(user.server.roles, name='Muted')
+#        await client.remove_roles(user, role)
+#        embed=discord.Embed(title="User Unmuted!", description="**{0}** was unmuted by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
+#        await client.say(embed=embed)
+ #   else:
+ #       embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
+ #       await client.say(embed=embed)
 
-@client.command(pass_context = True)
-async def ban(ctx, user: discord.Member):
-    if user.id == '267162548707524608':
-        await client.say('Good Try.')
-    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]: #Staff Role
-        role = discord.utils.get(user.server.roles, name='Banned')
-        await client.add_roles(user, role)
-        embed=discord.Embed(title="User Muted!", description="**{0}** was Banned by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
-        await client.say(embed=embed)    
-    else:
-        embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
-        await client.say(embed=embed)
+#@client.command(pass_context = True)
+#async def ban(ctx, user: discord.Member):
+#    if user.id == '267162548707524608':
+#        await client.say('Good Try.')
+#    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]: #Staff Role
+#        role = discord.utils.get(user.server.roles, name='Banned')
+#        await client.add_roles(user, role)
+#        embed=discord.Embed(title="User Muted!", description="**{0}** was Banned by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
+#        await client.say(embed=embed)    
+#    else:
+#        embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
+#        await client.say(embed=embed)
 
-@client.command(pass_context = True)
-async def unban(ctx, user: discord.Member):
-    if user.id == '267162548707524608':
-        await client.say('Good Try.')
-    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]: #Staff Role
-        role = discord.utils.get(user.server.roles, name='Banned')
-        await client.remove_roles(user, role)
-        embed=discord.Embed(title="User unbanned!", description="**{0}** was UnBanned by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
-        await client.say(embed=embed)
-    else:
-        embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
-        await client.say(embed=embed)
-
+#@client.command(pass_context = True)
+#async def unban(ctx, user: discord.Member):
+#    if user.id == '267162548707524608':
+#        await client.say('Good Try.')
+#    elif "456252795927003167" in [role.id for role in ctx.message.author.roles]: #Staff Role
+#        role = discord.utils.get(user.server.roles, name='Banned')
+#        await client.remove_roles(user, role)
+#        embed=discord.Embed(title="User unbanned!", description="**{0}** was UnBanned by **{1}**!".format(user, ctx.message.author), color=0x322b6e)
+#        await client.say(embed=embed)
+#    else:
+#        embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0x322b6e)
+#        await client.say(embed=embed)
+#
 @client.command(pass_context=True)
 async def members(ctx):
     totalmembers = ctx.message.server.members
@@ -155,13 +137,13 @@ async def echo(ctx, *, msg):
 
 aa='NTY4NjU0NTI3NTUzNzMyNjMw.'
         
-@client.command(pass_context=True)
-async def purge(ctx, amount=100):
-    channel = ctx.message.channel
-    messages = []
-    async for message in client.logs_from(channel, limit=int(amount) + 1):
-        messages.append(message)
-    await client.delete_messages(messages)
-    await client.say("Messages deleted.")
+#@client.command(pass_context=True)
+#async def purge(ctx, amount=100):
+#    channel = ctx.message.channel
+#    messages = []
+#    async for message in client.logs_from(channel, limit=int(amount) + 1):
+#        messages.append(message)
+#    await client.delete_messages(messages)
+#    await client.say("Messages deleted.")
 
 client.run(aa+zz)
